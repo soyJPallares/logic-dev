@@ -1,10 +1,12 @@
-# Lógica de programación
+# Lógica de programación 
+
+[![My Skills](https://skillicons.dev/icons?i=git,github,python,java)](https://skillicons.dev)
 
 ### *Ejercicios del curso:*
 *[Curso COMPLETO de LÓGICA DE PROGRAMACIÓN Desde Cero](https://youtu.be/TdITcVD64zI)*  
 by: MoureDev by Brais Moure
 
-### *Roadmap:*
+### *Roadmap:*  
 *<https://retosdeprogramacion.com/roadmap>*
 
 Repositorio para alojar los ejercicios del curso de Lógica de programación de Brais Moure - MoureDev  
@@ -15,3 +17,7 @@ El material de estudio lo he accesado desde el canal de Youtube *[MoureDev by Br
 > [!TIP]
 > Para cursos certificados puedes visitar su campus de programación: *[mouredev.pro](https://mouredev.pro)*  
 Cursos, ejercicios, test, certificados, soporte, comunidad y mucho más.
+
+<!--
+<img src="https://skillicons.dev/icons?i=python" /> <img src="https://skillicons.dev/icons?i=java" />
+--!>
