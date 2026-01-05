@@ -12,5 +12,6 @@ Lo usamos para practicar logica de programación en Python y Java y al mismo tie
 
 El material de estudio lo he accesado desde el canal de Youtube *[MoureDev by Brais Moure](https://www.youtube.com/@mouredev)* para fines didacticos exclusivamente.
 
-Para cursos certificados puedes visitar su campus de programación: *[mouredev.pro](https://mouredev.pro)*  
+> [!TIP]
+> Para cursos certificados puedes visitar su campus de programación: *[mouredev.pro](https://mouredev.pro)*  
 Cursos, ejercicios, test, certificados, soporte, comunidad y mucho más.
