@@ -1,3 +1,5 @@
+package Topic04_CharacterStrings;
+
 import java.util.Scanner;
 import java.util.Arrays;
 import java.util.List;
