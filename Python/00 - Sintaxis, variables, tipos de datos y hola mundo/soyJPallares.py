@@ -37,6 +37,20 @@ un comentario
 en varias líneas
 '''
 
+'''
+Nota 1:
+En los IDE modernos basados en VSCode puedes seleccionar el bloque de codigo 
+que quieras comentar y pulsar 3 veces cualquiera de las comillas, 
+sencillas (') o dobles (") para comentar el bloque.
+'''
+
+# Nota 2:
+# En los IDE modernos basados en VSCode puedes seleccionar el bloque de codigo 
+# que quieras comentar y pulsar las combinaciones de teclas: 
+# <Ctrl> + <K> y luego <Ctrl> + <C> (en ese mismo orden) o 
+# <Ctrl> + <K> y pulsar luego <C> (sin soltar <Ctrl>) 
+# y en ambos casos el IDE comenta el bloque linea por linea.
+
 my_var = "Mi variable"
 my_var = "Nuevo valor de mi variable"
 
