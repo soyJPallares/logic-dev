@@ -140,7 +140,7 @@ hello_python()
 Extra
 """
 
-def print_numbers(text1, text2) -> int:
+def print_numbers(text1: str, text2: str) -> int:
     count = 0
     for i in range(1, 101):
         if i % 3 == 0 and i % 5 == 0:
@@ -154,4 +154,4 @@ def print_numbers(text1, text2) -> int:
             count += 1
     return count
 
-print(print_numbers("Fizz", "Buzz"))
+print(f'se ha impreso el número {print_numbers("Fizz", "Buzz")} veces en lugar de los textos.')

@@ -2,9 +2,9 @@
 
 class Programmer:
 
-    surname: str = None
+    surname: str = ''
 
-    def __init__(self, name: str, age: int, languages: list):
+    def __init__(self, name: str, age: int, languages: list[str]):
         self.name = name
         self.age = age
         self.languages = languages
