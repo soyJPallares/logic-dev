@@ -35,16 +35,16 @@ public class Q03 {
 
 
     static void Generar(Q03 objAgenda) {
-        objAgenda.agenda.put("Jonatan", "3005981009");
-        objAgenda.agenda.put("Miguel", "3004451231");
-        objAgenda.agenda.put("Amada", "3014454562");
-        objAgenda.agenda.put("Elena", "3024451203");
-        objAgenda.agenda.put("Ainara", "3114455694");
-        objAgenda.agenda.put("Alanna", "3124458795");
-        objAgenda.agenda.put("Cris", "3134459578");
-        objAgenda.agenda.put("Yaireth", "3204547895");
-        objAgenda.agenda.put("Poncho", "3214578495");
-        objAgenda.agenda.put("Hilda", "3172237548");
+        objAgenda.agenda.put("Jonatan", "300 598 1009");
+        objAgenda.agenda.put("Miguel", "300 445 1231");
+        objAgenda.agenda.put("Amada", "301 445 4562");
+        objAgenda.agenda.put("Elena", "302 445 1203");
+        objAgenda.agenda.put("Ainara", "311 445 5694");
+        objAgenda.agenda.put("Alanna", "312 445 8795");
+        objAgenda.agenda.put("Cris", "313 445 9578");
+        objAgenda.agenda.put("Yaireth", "320 454 7895");
+        objAgenda.agenda.put("Poncho", "321 457 8495");
+        objAgenda.agenda.put("Hilda", "317 223 7548");
     }
 
 
