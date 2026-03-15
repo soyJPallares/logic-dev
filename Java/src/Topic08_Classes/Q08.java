@@ -25,10 +25,10 @@ class Pila {
     public Stack<String> stack = new Stack();
 
     public String Stack_Menu() {
-        System.out.println("1. Añadir elemento");
-        System.out.println("2. Eliminar elementos");
-        System.out.println("3. Imprimir los elementos");
-        System.out.println("0. Regresar");
+        System.out.println("1. Add item");
+        System.out.println("2. Delete item");
+        System.out.println("3. List items");
+        System.out.println("0. Return");
         return null;
     }
 
@@ -43,8 +43,13 @@ class Pila {
     }
 
     public String print() {
-        System.out.println(stack.size());
-        System.out.println(stack);
+        System.out.println("Size: " + stack.size());
+        System.out.println("Stack: ");
+
+        for (int item = stack.size() - 1; item >= 0; item--) {
+            System.out.println(stack.get(item));
+        }
+
         return null;
     }
 
@@ -100,6 +105,26 @@ public class Q08 {
         Pila myStack = new Pila();
         Cola myQueque = new Cola();
         boolean flag = true;
+
+        myQueque.add("Miguel");
+        myQueque.add("Jonatan");
+        myQueque.add("Amada");
+        myQueque.add("Ainara");
+        myQueque.add("Elena");
+        myQueque.add("Barranquilla");
+        myQueque.add("Medellín");
+        myQueque.add("Cali");
+        myQueque.add("Bogotá DC");
+
+        myStack.push("Miguel");
+        myStack.push("Jonatan");
+        myStack.push("Amada");
+        myStack.push("Ainara");
+        myStack.push("Elena");
+        myStack.push("Barranquilla");
+        myStack.push("Medellín");
+        myStack.push("Cali");
+        myStack.push("Bogotá DC");
 
         while (flag) {
             Menu();
