@@ -60,7 +60,6 @@ my_set = set(sorted(my_set))  # No se puede ordenar
 print(my_set)
 #my_set.clear()
 #print(my_set)
-
 print(type(my_set))
 
 # Diccionario
