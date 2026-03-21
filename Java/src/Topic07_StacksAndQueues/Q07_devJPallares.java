@@ -2,8 +2,6 @@ package Topic07_StacksAndQueues;
 
 import java.util.Scanner;
 import java.util.Stack;
-import java.util.Queue;
-import java.util.ArrayDeque;
 
 /*
  * EJERCICIO:
@@ -23,7 +21,7 @@ import java.util.ArrayDeque;
  *   interpretan como nombres de documentos.
  */
 
-public class Q07 {
+public class Q07_devJPallares {
 
     Stack<String> web = new Stack<>();
 
@@ -33,7 +31,7 @@ public class Q07 {
 
     static void menuWeb(){
 
-        Q07 objWeb = new Q07();
+        Q07_devJPallares objWeb = new Q07_devJPallares();
 
         objWeb.web.push("www.google.com");
         objWeb.web.push("www.yahoo.com");
@@ -103,7 +101,7 @@ public class Q07 {
         }
     }
 
-    static void browser(Q07 objWeb){
+    static void browser(Q07_devJPallares objWeb){
         if (objWeb.web.size() == 1) {
             System.out.println("No hay URL anterior");
         }

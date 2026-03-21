@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.HashMap;
 import java.util.List;
 
-public class EstructuraDatos {
+public class devJPallares {
     public static void main(String[] args){
         List<String> cars = new ArrayList<>();
         cars.add("Volvo");

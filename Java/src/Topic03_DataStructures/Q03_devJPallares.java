@@ -1,16 +1,15 @@
 package Topic03_DataStructures;
 
-import javax.swing.*;
 import java.util.Scanner;
 import java.util.HashMap;
 
-public class Q03 {
+public class Q03_devJPallares {
 
     HashMap<String, String> agenda = new HashMap<>();
 
     public static void main(String[] args) {
 
-        Q03 objAgenda = new Q03();
+        Q03_devJPallares objAgenda = new Q03_devJPallares();
 
         Generar(objAgenda);
         boolean flag = true;
@@ -34,7 +33,7 @@ public class Q03 {
     }
 
 
-    static void Generar(Q03 objAgenda) {
+    static void Generar(Q03_devJPallares objAgenda) {
         objAgenda.agenda.put("Jonatan", "300 598 1009");
         objAgenda.agenda.put("Miguel", "300 445 1231");
         objAgenda.agenda.put("Amada", "301 445 4562");
@@ -48,7 +47,7 @@ public class Q03 {
     }
 
 
-    static void Listar(Q03 objAgenda) {
+    static void Listar(Q03_devJPallares objAgenda) {
 
         System.out.println("\nContactos\n");
         objAgenda.agenda.forEach((name, phone) -> System.out.printf("%s : %s\n", name, phone));
@@ -67,7 +66,7 @@ public class Q03 {
     }
 
 
-    static void Nuevo(Q03 objAgenda) {
+    static void Nuevo(Q03_devJPallares objAgenda) {
         Scanner capData = new Scanner(System.in);
 
         System.out.print("Nombre: ");
@@ -82,7 +81,7 @@ public class Q03 {
     }
 
 
-    static void Buscar(Q03 objAgenda){
+    static void Buscar(Q03_devJPallares objAgenda){
         Scanner capData = new Scanner(System.in);
 
         System.out.print("Nombre: ");
@@ -97,7 +96,7 @@ public class Q03 {
     }
 
 
-    static void Editar(Q03 objAgenda){
+    static void Editar(Q03_devJPallares objAgenda){
 
         Scanner capData = new Scanner(System.in);
         System.out.print("Nombre: ");
@@ -123,7 +122,7 @@ public class Q03 {
     }
 
 
-    static void Eliminar(Q03 objAgenda) {
+    static void Eliminar(Q03_devJPallares objAgenda) {
 
         Scanner capName = new Scanner(System.in);
         System.out.print("Nombre: ");

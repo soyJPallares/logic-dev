@@ -39,7 +39,7 @@ import java.util.Collections;
  *       Ejemplos: Centrifugado, Vislumbrar, Pueblo.
  */
 
-public class Q04 {
+public class Q04_devJPallares {
     public static void main(String[] args) {
         boolean flag = true;
 

@@ -92,7 +92,7 @@ class Cola {
 }
 
 
-public class Q08 {
+public class Q08_devJPallares {
 
     static void Menu() {
         System.out.println("1. Pilas");
@@ -101,7 +101,7 @@ public class Q08 {
     }
 
     public static void main(String[] args) {
-        Q08 myObj = new Q08();
+//        Q08_devJPallares myObj = new Q08();
         Pila myStack = new Pila();
         Cola myQueque = new Cola();
         boolean flag = true;

@@ -1,11 +1,11 @@
 package Topic02_FunctionsAndScope;
 
-public class FuncionesAlcance {
+public class devJPallares {
 
     String globalvar = "Java";
 
     public static void main(String[] args){
-        FuncionesAlcance myGlobalvar = new FuncionesAlcance();
+        devJPallares myGlobalvar = new devJPallares();
 
         greet();
         System.out.println(return_greet());
@@ -69,7 +69,7 @@ public class FuncionesAlcance {
 
 
     static void hello_java(){
-        FuncionesAlcance myGlobalvar2 = new FuncionesAlcance();
+        devJPallares myGlobalvar2 = new devJPallares();
         String localvar = "Hola";
         System.out.println(localvar + " " + myGlobalvar2.globalvar);
     }

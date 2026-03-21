@@ -23,7 +23,7 @@ class Programmer {
     }
 }
 
-public class Clases {
+public class devJPallares {
 
     public static void main(String[] args) {
 
