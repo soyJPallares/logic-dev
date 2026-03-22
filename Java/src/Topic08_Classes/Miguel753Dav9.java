@@ -1,12 +1,14 @@
+package Topic08_Classes;
+
 import java.util.ArrayList;
 
-public class Clases {
+public class Miguel753Dav9 {
     String name;
     String surname;
     int age;
     ArrayList<String> Lenguajes = new ArrayList<>();
 
-    public Clases(String name, String surname, int age, ArrayList Lenguajes) {
+    public Miguel753Dav9(String name, String surname, int age, ArrayList Lenguajes) {
         this.name = name;
         this.surname = surname;
         this.age = age;
@@ -21,7 +23,7 @@ public class Clases {
         ArrayList<String> temp = new ArrayList<>();
         temp.add("Python");
         temp.add("Java");
-        Clases objProgrammer = new Clases("Miguel", "Pallares", 12, temp);
+        Miguel753Dav9 objProgrammer = new Miguel753Dav9("Miguel", "Pallares", 12, temp);
         System.out.println(objProgrammer.printInfo());
     }
 }

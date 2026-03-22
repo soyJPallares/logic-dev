@@ -1,3 +1,5 @@
+package Topic08_Classes;
+
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.Queue;
@@ -18,7 +20,7 @@ import java.util.ArrayDeque;
  *   retornar el número de elementos e imprimir todo su contenido.
  */
 
-public class Q08 {
+public class Q08_Miguel753Dav9 {
     static void Menu() {
         System.out.println("1. Pilas");
         System.out.println("2. Colas");
@@ -92,9 +94,9 @@ public class Q08 {
     }
 
     public static void main(String[] args) {
-        Q08 myObj = new Q08();
-        Q08.Pila myStack = myObj.new Pila();
-        Q08.Cola myQueque = myObj.new Cola();
+        Q08_Miguel753Dav9 myObj = new Q08_Miguel753Dav9();
+        Q08_Miguel753Dav9.Pila myStack = myObj.new Pila();
+        Q08_Miguel753Dav9.Cola myQueque = myObj.new Cola();
         boolean flag = true;
 
         while (flag) {
