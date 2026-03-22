@@ -1,4 +1,6 @@
-public class HolaMundo {
+package Topic00_SintaxVariablesDataTypeAndHelloWorld;
+
+public class Miguel753Dav9 {
     public static void main(String[] args){
         System.out.println("Hola, Java");
         //https://www.java.com/es/
