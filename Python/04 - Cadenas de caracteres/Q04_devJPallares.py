@@ -1,33 +1,34 @@
-'''
- * EJERCICIO:
- * Muestra ejemplos de todas las operaciones que puedes realizar con cadenas de caracteres
- * en tu lenguaje. Algunas de esas operaciones podrían ser (busca todas las que puedas):
- * - Acceso a caracteres específicos, subcadenas, longitud, concatenación, repetición,
- *   recorrido, conversión a mayúsculas y minúsculas, reemplazo, división, unión,
- *   interpolación, verificación...
- *
- * DIFICULTAD EXTRA (opcional):
- * Crea un programa que analice dos palabras diferentes y realice comprobaciones
- * para descubrir si son:
- * - Palíndromos
- * - Anagramas
- * - Isogramas
- * ****************************************
- * 1. Palíndromos
- *   Son palabras o frases que se leen igual de izquierda a derecha que de derecha a izquierda. En el caso de las frases, se ignoran los espacios y signos de puntuación. 
- *       Ejemplos de palabras: Oso, reconocer, seres.
- *       Ejemplos de frases: "Anita lava la tina", "Dábale arroz a la zorra el abad". 
- * 2. Anagramas
- *   Consisten en crear una palabra o frase nueva reordenando exactamente las mismas letras de otra palabra o frase original. 
- *       Ejemplos:
- *           Roma → Amor o Mora.
- *           Lácteo → Coleta.
- *           Frase → Fresa. 
- * 3. Isogramas
- *   Es una palabra en la que no se repite ninguna letra. 
- *   Si cada letra aparece exactamente el mismo número de veces (por ejemplo, todas aparecen dos veces), se denomina isograma de segundo orden. 
- *       Ejemplos: Centrifugado, Vislumbrar, Pueblo.
- '''
+
+#  * EJERCICIO:
+#  * Muestra ejemplos de todas las operaciones que puedes realizar con cadenas de caracteres
+#  * en tu lenguaje. Algunas de esas operaciones podrían ser (busca todas las que puedas):
+#  * - Acceso a caracteres específicos, subcadenas, longitud, concatenación, repetición,
+#  *   recorrido, conversión a mayúsculas y minúsculas, reemplazo, división, unión,
+#  *   interpolación, verificación...
+#  *
+#  * DIFICULTAD EXTRA (opcional):
+#  * Crea un programa que analice dos palabras diferentes y realice comprobaciones
+#  * para descubrir si son:
+#  * - Palíndromos
+#  * - Anagramas
+#  * - Isogramas
+#  * ****************************************
+#  * 1. Palíndromos
+#  *   Son palabras o frases que se leen igual de izquierda a derecha que de derecha a izquierda. En el caso de las frases, se ignoran los espacios y signos de puntuación. 
+#  *       Ejemplos de palabras: Oso, reconocer, seres.
+#  *       Ejemplos de frases: "Anita lava la tina", "Dábale arroz a la zorra el abad". 
+#  * 2. Anagramas
+#  *   Consisten en crear una palabra o frase nueva reordenando exactamente las mismas letras de otra palabra o frase original. 
+#  *       Ejemplos:
+#  *           Roma → Amor o Mora.
+#  *           Lácteo → Coleta.
+#  *           Frase → Fresa. 
+#  * 3. Isogramas
+#  *   Es una palabra en la que no se repite ninguna letra. 
+#  *   Si cada letra aparece exactamente el mismo número de veces (por ejemplo, todas aparecen dos veces), se denomina isograma de segundo orden. 
+#  *       Ejemplos: Centrifugado, Vislumbrar, Pueblo.
+
+
 import os
 import platform
 import time

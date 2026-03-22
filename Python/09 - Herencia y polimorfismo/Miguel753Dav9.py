@@ -1,3 +1,4 @@
+
 # Superclase
 
 class Animal:
@@ -8,8 +9,8 @@ class Animal:
     def sound(self):
         pass
 
-# Subclases
 
+# Subclases
 
 class Dog(Animal):
 

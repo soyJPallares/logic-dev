@@ -1,5 +1,4 @@
 
-# /*
 #  * EJERCICIO:
 #  * - Crea ejemplos de funciones básicas que representen las diferentes
 #  *   posibilidades del lenguaje:
@@ -20,11 +19,11 @@
 #  *
 #  * Presta especial atención a la sintaxis que debes utilizar en cada uno de los casos.
 #  * Cada lenguaje sigue una convenciones que debes de respetar para que el código se entienda.
-#  */
 
-"""
-Funciones definidas por el usuario
-"""
+
+
+# Funciones definidas por el usuario
+
 
 # Simple
 
@@ -102,9 +101,9 @@ variable_key_arg_greet(
     age=36
 )
 
-"""
-Funciones dentro de funciones
-"""
+
+# Funciones dentro de funciones
+
 
 def outer_function():
     def inner_function():
@@ -113,17 +112,17 @@ def outer_function():
 
 outer_function()
 
-"""
-Funciones del lenguaje (built-in)
-"""
+
+# Funciones del lenguaje (built-in)
+
 
 print(len("MoureDev"))
 print(type(36))
 print("MoureDev".upper())
 
-"""
-Variables locales y globales
-"""
+
+# Variables locales y globales
+
 
 global_var = "Python"
 
@@ -136,9 +135,9 @@ print(global_var)
 
 hello_python()
 
-"""
-Extra
-"""
+# +-------+
+# |  Q02  |
+# +-------+
 
 def print_numbers(text1: str, text2: str) -> int:
     count = 0
