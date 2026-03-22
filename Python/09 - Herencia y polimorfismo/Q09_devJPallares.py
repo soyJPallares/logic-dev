@@ -59,7 +59,6 @@ class ProjectManager(Employee):
         super().__init__(id, name, user)
         self.project: str = project
         self.tasks: dict = {}
-        self.team: list = []
 
 #-------------------------------------
     def print_project(self):
