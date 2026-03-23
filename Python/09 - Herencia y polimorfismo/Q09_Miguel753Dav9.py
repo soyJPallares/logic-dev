@@ -49,6 +49,11 @@ class Manager(Employee):
         print(f'Departamento: {self.departament} | Gerente: {self.name}')
         print(f'El gerente del departamento {self.departament}, {self.name}, esta administrando el proyecto.')
 
+    def menuManager(self):
+        print("1. Aprobacion de gasto")
+        print("2. Imprimir el departamento")
+        print("0. Salir")
+
 class ProjectManager(Employee):
     def __init__(self, id, name, user, proyecto):
         super().__init__(id, name, user)
@@ -64,7 +69,17 @@ class ProjectManager(Employee):
 
 
     def printProject(self):
-        print(f"Projecto: {self.project} | Gerente del proyecto {self.name}")
+        print(f"Proyecto: {self.project} | Gerente del proyecto {self.name}")
+
+    def menuProject(self):
+        print("1. Gerente de proyecto 1")
+        print("2. Gerente de proyecto 2")
+        print("0. Salir")
+
+    def menuManagerProject(self):
+        print("1. Asignar tarea")
+        print("2. Imprimir el proyecto")
+        print("0. Salir")
 
     # def printType(self):
     #     print(type(self.tasks))
@@ -84,72 +99,107 @@ class Programmer(Employee):
         print(f'Commit: "{self.menssage}" | Branch: {self.branch} | Programador: {self.name}')
 
 
-def main():
+my_manager: Manager = Manager(1, "Joshua Dax", "@jdax", "Operations")
 
-    my_manager: Manager = Manager(1, "Joshua Dax", "@jdax", "Operations")
+my_project_manager_01: ProjectManager = ProjectManager(2, "John Doe", "@jdoe", "AlphaPrime")
+my_project_manager_02: ProjectManager = ProjectManager(3, "Jane Doe", "@jdoe", "BetaTax")
 
-    my_project_manager_01: ProjectManager = ProjectManager(2, "John Doe", "@jdoe", "AlphaPrime")
-    my_project_manager_02: ProjectManager = ProjectManager(3, "Jane Doe", "@jdoe", "BetaTax")
+my_programmer_01: Programmer = Programmer(4, "Toby Fox", "@tfox", "Senior", "python/FastApi")
+my_programmer_02: Programmer = Programmer(5, "Bob Smith", "@bsmith", "Junior", "javascript/React/")
+my_programmer_03: Programmer = Programmer(6, "Charlie Brown", "@cbrown", "Mid-level", "html/css")
+my_programmer_04: Programmer = Programmer(7, "Diana Prince", "@dprince", "Trainee", "python/FastApi")
+my_programmer_05: Programmer = Programmer(4, "Allen Foxter", "@afoxter", "Senior", "python/FastApi")
+my_programmer_06: Programmer = Programmer(5, "Bobie Smithson", "@bsmithson", "Junior", "javascript/React/")
+my_programmer_07: Programmer = Programmer(6, "Charles Boswell", "@cboswell", "Mid-level", "html/css")
+my_programmer_08: Programmer = Programmer(7, "Liv Tyler", "@ltyler", "Trainee", "python/FastApi")
+# my_project_manager_01.print_type()
 
-    my_programmer_01: Programmer = Programmer(4, "Toby Fox", "@tfox", "Senior", "python/FastApi")
-    my_programmer_02: Programmer = Programmer(5, "Bob Smith", "@bsmith", "Junior", "javascript/React/")
-    my_programmer_03: Programmer = Programmer(6, "Charlie Brown", "@cbrown", "Mid-level", "html/css")
-    my_programmer_04: Programmer = Programmer(7, "Diana Prince", "@dprince", "Trainee", "python/FastApi")
-    my_programmer_05: Programmer = Programmer(4, "Allen Foxter", "@afoxter", "Senior", "python/FastApi")
-    my_programmer_06: Programmer = Programmer(5, "Bobie Smithson", "@bsmithson", "Junior", "javascript/React/")
-    my_programmer_07: Programmer = Programmer(6, "Charles Boswell", "@cboswell", "Mid-level", "html/css")
-    my_programmer_08: Programmer = Programmer(7, "Liv Tyler", "@ltyler", "Trainee", "python/FastApi")
-    # my_project_manager_01.print_type()
-    print('--------------------------------------------------------------------------')
+my_manager.add_team_member(my_project_manager_01)
+my_manager.add_team_member(my_project_manager_02)
 
-    my_manager.add_team_member(my_project_manager_01)
-    my_manager.add_team_member(my_project_manager_02)
-    my_manager.print_department()
-    my_manager.print_team()
+my_project_manager_01.add_team_member(my_programmer_01)
+my_project_manager_01.add_team_member(my_programmer_02)
+my_project_manager_01.add_team_member(my_programmer_03)
+my_project_manager_01.add_team_member(my_programmer_04)
 
-    my_manager.aprobar_gasto(45000)
-    my_manager.aprobar_gasto(60000)
-    my_manager.aprobar_gasto(90000)
-    print('--------------------------------------------------------------------------')
+my_project_manager_02.printProject()
+my_project_manager_02.add_team_member(my_programmer_05)
+my_project_manager_02.add_team_member(my_programmer_06)
+my_project_manager_02.add_team_member(my_programmer_07)
+my_project_manager_02.add_team_member(my_programmer_08)
 
-    my_project_manager_01.printProject()
-    my_project_manager_01.add_team_member(my_programmer_01)
-    my_project_manager_01.add_team_member(my_programmer_02)
-    my_project_manager_01.add_team_member(my_programmer_03)
-    my_project_manager_01.add_team_member(my_programmer_04)
-    my_project_manager_01.print_team()
+my_project_manager_02.asignar_tarea(my_programmer_05, "Diseñar Base de Datos / Backend")
+my_project_manager_02.asignar_tarea(my_programmer_06, "Implementar login / Middleware")
+my_project_manager_02.asignar_tarea(my_programmer_07, "Diseñar Maquetado / Frontend")
+my_project_manager_02.asignar_tarea(my_programmer_08, "Diseñar / Implementar API REST")
 
-    my_project_manager_01.asignar_tarea(my_programmer_01, "Implementar login")
-    my_project_manager_01.asignar_tarea(my_programmer_02, "Implementar registro")
-    my_project_manager_01.asignar_tarea(my_programmer_03, "Diseñar Maquetado")
-    my_project_manager_01.asignar_tarea(my_programmer_04, "Diseñar Base de Datos")
-    print('--------------------------------------------------------------------------')
-    my_programmer_01.add_team_member(my_programmer_02)
-    print('--------------------------------------------------------------------------')
+my_programmer_01.hacer_commit("Login implemented")
+my_programmer_02.hacer_commit("Registration implemented")
+my_programmer_03.hacer_commit("Layout designed")
+my_programmer_04.hacer_commit("Database designed")
 
-    my_project_manager_02.printProject()
-    my_project_manager_02.add_team_member(my_programmer_05)
-    my_project_manager_02.add_team_member(my_programmer_06)
-    my_project_manager_02.add_team_member(my_programmer_07)
-    my_project_manager_02.add_team_member(my_programmer_08)
-    my_project_manager_02.print_team()
+my_programmer_05.hacer_commit("Database designed / Backend implemented")
+my_programmer_06.hacer_commit("Login implemented / Middleware implemented")
+my_programmer_07.hacer_commit("Layout designed / Frontend implemented")
+my_programmer_08.hacer_commit("API REST designed / implemented")
 
-    my_project_manager_02.asignar_tarea(my_programmer_05, "Diseñar Base de Datos / Backend")
-    my_project_manager_02.asignar_tarea(my_programmer_06, "Implementar login / Middleware")
-    my_project_manager_02.asignar_tarea(my_programmer_07, "Diseñar Maquetado / Frontend")
-    my_project_manager_02.asignar_tarea(my_programmer_08, "Diseñar / Implementar API REST")
-    print('--------------------------------------------------------------------------')
+while True:
+    Menu()
+    opc = int(input("Escoge una opcion: "))
+    match opc:
+        case 1:
+            while True:
+                my_manager.menuManager
+                opc1 = int(input("Escoge una opcion: "))
+                match opc1:
+                    case 1:
+                        monto = input("Digite el monto (no puede ser maximo de 50.000): ")
+                        my_manager.aprobar_gasto(monto)
+                    case 2:
+                        my_manager.print_department()
+                    case 0:
+                        break
+        case 2:
+            while True:
+                ProjectManager.menuProject()
+                opc2 = int(input("Escoge una opcion: "))
+                match opc2:
+                    case 1:
+                        while True:
+                            ProjectManager.menuManagerProject()
+                            opc3 = int(input("Escoge la opcion: "))
+                            match opc3:
+                                case 1:
+                                    Programador = input("Ingrese el programador: ")
+                                    valor = globals()[Programador]
+                                    Tarea = input("Ingrese la tarea a asignar: ")
+                                    my_project_manager_01.asignar_tarea(valor, Tarea)
+                                case 2:
+                                    my_project_manager_01.printProject()
+                                case 0:
+                                    break
+                    case 2:
+                        while True:
+                            ProjectManager.menuManagerProject()
+                            opc3 = int(input("Escoge la opcion: "))
+                            match opc3:
+                                case 1:
+                                    Programador = input("Ingrese el programador: ")
+                                    valor = globals()[Programador]
+                                    Tarea = input("Ingrese la tarea a asignar: ")
+                                    my_project_manager_02.asignar_tarea(valor, Tarea)
+                                case 2:
+                                    my_project_manager_02.printProject()
+                                case 0:
+                                    break
+        case 0:
+            break
 
-    my_programmer_01.hacer_commit("Login implemented")
-    my_programmer_02.hacer_commit("Registration implemented")
-    my_programmer_03.hacer_commit("Layout designed")
-    my_programmer_04.hacer_commit("Database designed")
-    print('--------------------------------------------------------------------------')
 
-    my_programmer_05.hacer_commit("Database designed / Backend implemented")
-    my_programmer_06.hacer_commit("Login implemented / Middleware implemented")
-    my_programmer_07.hacer_commit("Layout designed / Frontend implemented")
-    my_programmer_08.hacer_commit("API REST designed / implemented")
+                    
+                        
+                                    
+                                
+                        
 
-main()
 
