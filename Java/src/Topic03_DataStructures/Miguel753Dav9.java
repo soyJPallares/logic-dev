@@ -1,8 +1,11 @@
+package Topic03_DataStructures;
+
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.HashMap;
 
-public class EstructuraDatos {
+public class Miguel753Dav9 {
     public static void main(String[] args){
         ArrayList<String> cars = new ArrayList<String>();
         cars.add("Volvo");

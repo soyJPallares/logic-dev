@@ -1,3 +1,6 @@
+package Topic07_StacksAndQueues;
+
+
 import java.util.Scanner;
 import java.util.Stack;
 import java.util.Queue;
@@ -21,14 +24,14 @@ import java.util.ArrayDeque;
  *   interpretan como nombres de documentos.
  */
 
-public class Q07 {
+public class Q07_Miguel753Dav9 {
 
     Stack<String> web = new Stack<>();
     Queue<String> documents = new ArrayDeque<>();
 
     public static void main(String[] args) {
-        Q07 objWeb = new Q07();
-        Q07 objDoc = new Q07();
+        Q07_Miguel753Dav9 objWeb = new Q07_Miguel753Dav9();
+        Q07_Miguel753Dav9 objDoc = new Q07_Miguel753Dav9();
         objWeb.web.push("www.google.com");
         objWeb.web.push("www.yahoo.com");
         objWeb.web.push("www.reddit.com");
@@ -81,7 +84,7 @@ public class Q07 {
         }
     }
 
-    static void browser (Q07 objWeb) {
+    static void browser (Q07_Miguel753Dav9 objWeb) {
         if (objWeb.web.size() == 1) {
             System.out.println("No hay URL anterior");
         } else if (objWeb.web.size() > 1) {
@@ -92,7 +95,7 @@ public class Q07 {
         }
     }
 
-    static void printer (Q07 objDoc) {
+    static void printer (Q07_Miguel753Dav9 objDoc) {
          if (objDoc.documents.size() < 1) {
             System.out.println("No hay documentos en la lista");
         } else {

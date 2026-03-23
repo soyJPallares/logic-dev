@@ -1,4 +1,7 @@
-public class Operadores {
+package Topic01_OperatorsAndControlStructures;
+
+
+public class Miguel753Dav9 {
     static void main(String[] args) {
         //Operadores Aritmeticos
 

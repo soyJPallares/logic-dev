@@ -1,14 +1,16 @@
+package Topic03_DataStructures;
+
 import javax.swing.*;
 import java.util.Scanner;
 import java.util.HashMap;
 
-public class Q03 {
+public class Q03_Miguel753Dav9 {
 
     HashMap<String, String> agenda = new HashMap<String, String>();
 
     public static void main(String[] args) {
 
-        Q03 objAgenda = new Q03();
+        Q03_Miguel753Dav9 objAgenda = new Q03_Miguel753Dav9();
 
         generar(objAgenda);
         boolean flag = true;
@@ -31,7 +33,7 @@ public class Q03 {
         }
     }
 
-    static void generar(Q03 objAgenda) {
+    static void generar(Q03_Miguel753Dav9 objAgenda) {
 
         objAgenda.agenda.put("Jonatan", "201");
         objAgenda.agenda.put("Miguel", "301");
@@ -48,7 +50,7 @@ public class Q03 {
         System.out.println("6. salir");
     }
 
-    static void Nuevo(Q03 objAgenda) {
+    static void Nuevo(Q03_Miguel753Dav9 objAgenda) {
 
         //Q03 myAgenda = new Q03();
 
@@ -64,7 +66,7 @@ public class Q03 {
             objAgenda.agenda.put(name, phone);
         }
     }
-    static void Buscar(Q03 objAgenda){
+    static void Buscar(Q03_Miguel753Dav9 objAgenda){
 
         Scanner capName = new Scanner(System.in);
         System.out.println("Digite a el nombre a buscar: ");
@@ -76,7 +78,7 @@ public class Q03 {
             System.out.println("El contacto no existe");
         }
     }
-    static void Editar(Q03 objAgenda){
+    static void Editar(Q03_Miguel753Dav9 objAgenda){
 
         Scanner capName = new Scanner(System.in);
         System.out.println("Digite la persona a editar: ");
@@ -98,7 +100,7 @@ public class Q03 {
             System.out.println("El contacto no existe");
         }
     }
-    static void Eliminar(Q03 objAgenda){
+    static void Eliminar(Q03_Miguel753Dav9 objAgenda){
 
         Scanner capName = new Scanner(System.in);
         System.out.println("Digite la persona a eliminar: ");

@@ -1,3 +1,5 @@
+package Topic04_CharacterStrings;
+
 import java.util.*;
 import java.util.stream.Stream;
 import java.util.function.Function;
@@ -34,7 +36,7 @@ import java.util.Collections;
  *   Si cada letra aparece exactamente el mismo número de veces (por ejemplo, todas aparecen dos veces), se denomina isograma de segundo orden.
  *       Ejemplos: Centrifugado, Vislumbrar, Pueblo.
  */
-public class Q04 {
+public class Q04_Miguel753Dav9 {
     public static void main(String[] args) {
         boolean flag = true;
         while (flag) {

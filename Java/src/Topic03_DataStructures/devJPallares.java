@@ -7,6 +7,9 @@ import java.util.List;
 
 public class devJPallares {
     public static void main(String[] args){
+
+        // Listas [-] (Lista mutable de valores) - Indexada - Ordenable
+
         List<String> cars = new ArrayList<>();
         cars.add("Volvo");
         cars.add("BMW");
@@ -25,6 +28,8 @@ public class devJPallares {
         List<String> countries = new ArrayList<>(List.of("Colombia", "Venezuela", "Perú", "Ecuador"));
         System.out.println(countries);
 
+        // Sets [Sets en Python] (Lista de Valores) - Hasheable - Desordenada
+
         HashSet<String> names = new HashSet<>();
         names.add("Miguel");
         names.add("Jonatan");
@@ -34,6 +39,8 @@ public class devJPallares {
         names.add("Amada");
         names.add("Jonatan");
         System.out.println(names);
+
+        // Mapas [Diccionarios en Python] (Pares Clave : Valor) - Hasheable - Desordenada
 
         HashMap<String, String> myMap = new HashMap<>();
         myMap.put("name", "Miguel");

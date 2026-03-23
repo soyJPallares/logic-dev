@@ -1,3 +1,5 @@
+package Topic05_ValueAndReference;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Arrays;
@@ -21,7 +23,7 @@ import java.util.Arrays;
  *   Comprueba también que se ha conservado el valor original en las primeras.
  */
 
-public class Q05 {
+public class Q05_Miguel753Dav9 {
     public static void main(String[] args){
         String value1 = "Sirius";
         String value2 = "Black";

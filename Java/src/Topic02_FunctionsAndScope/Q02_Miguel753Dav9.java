@@ -1,4 +1,7 @@
-public class Q02 {
+package Topic02_FunctionsAndScope;
+
+
+public class Q02_Miguel753Dav9 {
     static int numbers1to100(String text1, String text2){
          int count = 0;
          for (int i = 1; i < 101; i++ ){

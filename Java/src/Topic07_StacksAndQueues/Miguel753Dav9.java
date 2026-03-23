@@ -2,7 +2,7 @@ import java.util.Stack;
 import java.util.Queue;
 import java.util.ArrayDeque;
 
-public class Pilas_Colas {
+public class Miguel753Dav9 {
     public static void main(String[] args){
         Stack<Integer> pila = new Stack<>();
         pila.push(1);

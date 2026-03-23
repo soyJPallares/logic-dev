@@ -1,3 +1,5 @@
+package Topic06_Recursion;
+
 import java.util.Scanner;
 /*
  * EJERCICIO:
@@ -14,7 +16,7 @@ import java.util.Scanner;
  * La Sucesión de Fibonacci es una secuencia infinita de números naturales donde cada término (a partir del tercero) es la suma de los dos anteriores, comenzando usualmente por 0 y 1 (0, 1, 1, 2, 3, 5, 8, 13, ...), y aparece sorprendentemente en la naturaleza, el arte, la arquitectura y la computación, conectada estrechamente con la proporción áurea (Φ). Cómo se forma: Se empieza con los números 0 y 1.Cada número siguiente es la suma de los dos números previos.(0+1=1)(1+1=2)(1+2=3)(2+3=5)Y así sucesivamente: 0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, ....
  *
  */
-public class Q06 {
+public class Q06_Miguel753Dav9 {
     public static void main(String[] args){
         boolean flag = true;
         while (flag) {
