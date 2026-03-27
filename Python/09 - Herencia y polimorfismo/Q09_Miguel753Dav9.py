@@ -90,6 +90,10 @@ class Programmer(Employee):
         self.lenguage = lenguajes
         self.level = nivel
 
+    def menu_Programmer():
+        print("1. Hacer commit")
+        print("0. Salir")
+
     def add_team_member(self, member:Employee):
         print(f"Un programador no tiene empleados a su cargo. {member.name} no se añadirá.")
 
@@ -192,14 +196,18 @@ while True:
                                     my_project_manager_02.printProject()
                                 case 0:
                                     break
+
+        case 3:
+            while True:
+                Programmer.menu_Programmer()
+                opc4 = int(input("Digite la opcion: "))
+                match opc4:
+                    case 1:
+                        Programador2 = input("Ingrese su nombre para continuar: ")
+                        commit = input("Digite el commit que quiere hacer: ")
+                        valor2 = globals()[Programador2]
+                        valor2.hacer_commit(commit)
+                    case 0:
+                        break
         case 0:
             break
-
-
-                    
-                        
-                                    
-                                
-                        
-
-
