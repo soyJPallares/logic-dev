@@ -13,6 +13,18 @@
 #  * actividad, y almacenan los empleados a su cargo.'''
 
 
+# ++------------------------------------------------------------++
+# ||     función clrscr (Clear Screen): Limpia la pantalla.     ||
+# ++------------------------------------------------------------++
+
+import os
+import platform
+
+def clrscr() -> None:
+    if platform.system() == "Windows": os.system("cls")
+    else: os.system("clear")
+
+
 #--------------------------------------------------------------------------
 #  Primary Class Employee
 #--------------------------------------------------------------------------
@@ -70,6 +82,7 @@ class Manager(Employee):
 
 #-------------------------------------
     def menuManager(self) -> None:
+        clrscr()
         print("1. Approval expenses")
         print("2. Print Approvals history")
         print("3. Print department team")
@@ -106,6 +119,7 @@ class ProjectManager(Employee):
 
 #-------------------------------------
     def menuProjectManager(self) -> None:
+        clrscr()
         print("1. Print the project")
         print("2. Assign task")
         print("3. Team assigned tasks")
@@ -134,12 +148,14 @@ class Programmer(Employee):
 
 #-------------------------------------
     def menu_Programmer(self) -> None:
+        clrscr()
         print("1. Commit")
         print("0. Return")
 
 #--------------------------------------------------------------------------
 #--------------------------------------------------------------------------
 def Menu() -> None:
+    clrscr()
     print("1. Managemment")
     print("2. Projects Managemment")
     print("3. Development")
@@ -253,6 +269,7 @@ def main() -> None:
                     opc1 = int(input("Escoge una opcion: "))
                     match opc1:
                         case 1:
+                            clrscr()
                             print(f'Nota: \nExpense < COP50000 || Has Ticket: "n" => Auto Approved \nExpense > COP50000 || Has Ticket: "n" => Denied. \nExpense > COP50000 || Has Ticket: "s" => Approved.')   
                             monto = float(input("Digite el monto: "))
                             ticket_input: str = input("¿Cuenta con ticket? (s/n): ")
@@ -260,15 +277,18 @@ def main() -> None:
                             my_manager.approvals(monto, ticket)
                             x: str = input("Press <Enter> to continue...")
                         case 2:
+                            clrscr()
                             my_manager.print_approvals()
                             x: str = input("Press <Enter> to continue...")
                         case 3:
+                            clrscr()
                             my_manager.print_department()
                             my_manager.print_team()
                             x: str = input("Press <Enter> to continue...")
                         case 0:
                             break
             case 2:
+                clrscr()
                 my_manager.print_team()
                 project_manager_id: int = int(input('From team members list below, Write project manager id: '))
                 for member_manager_team in my_manager.team:
@@ -281,11 +301,13 @@ def main() -> None:
                     opc2 = int(input("Escoge una opcion: "))
                     match opc2:
                         case 1:
+                            clrscr()
                             my_project_manager.print_project()
                             my_project_manager.print_team()
                             x: str = input("Press <Enter> to continue...")
 
                         case 2:
+                            clrscr()
                             my_project_manager.print_team()
                             programmer_id: int = int(input('From team members list below, Write programmer id: '))
                             for member_project_manager_team in my_project_manager.team:
@@ -298,6 +320,7 @@ def main() -> None:
                             x: str = input("Press <Enter> to continue...")
 
                         case 3:
+                            clrscr()
                             # La solución es funcional pero voy a probar otra forma:
                             # for dev_task in my_project_manager.tasks.items():
                             #     print(f'Dev: {dev_task[0].name} | Task: "{dev_task[1]}"')
@@ -311,9 +334,11 @@ def main() -> None:
                             break
 
             case 3:
+                clrscr()
                 print("Funcionalidad de desarrollo aún no implementada.")
                 x = input("Press <Enter> to continue...")
             case 0:
+                clrscr()
                 print("Saliendo del programa...")
                 x: str = input("Press <Enter> to continue...")
                 break
