@@ -165,12 +165,12 @@ while True:
                         break
         case 2:
             while True:
-                ProjectManager.menuProject()
+                my_project_manager_01.menuProject()
                 opc2 = int(input("Escoge una opcion: "))
                 match opc2:
                     case 1:
                         while True:
-                            ProjectManager.menuManagerProject()
+                            my_project_manager_01.menuManagerProject()
                             opc3 = int(input("Escoge la opcion: "))
                             match opc3:
                                 case 1:
@@ -184,7 +184,7 @@ while True:
                                     break
                     case 2:
                         while True:
-                            ProjectManager.menuManagerProject()
+                            my_project_manager_01.menuManagerProject()
                             opc3 = int(input("Escoge la opcion: "))
                             match opc3:
                                 case 1:
