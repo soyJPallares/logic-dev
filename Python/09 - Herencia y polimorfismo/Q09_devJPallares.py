@@ -202,7 +202,7 @@ def main() -> None:
     my_project_manager_01.assign_tasks(my_programmer_02, "Implementar registro")
     my_project_manager_01.assign_tasks(my_programmer_03, "Diseñar Maquetado")
     my_project_manager_01.assign_tasks(my_programmer_04, "Diseñar Base de Datos")
-    print('--------------------------------------------------------------------------')
+    #print('--------------------------------------------------------------------------')
 
     # Prueba de Asignación de programador fallida,
     # Los programadores no pueden tener asiggnados a otros programadores
@@ -227,7 +227,7 @@ def main() -> None:
     my_project_manager_02.assign_tasks(my_programmer_06, "Implementar login / Middleware")
     my_project_manager_02.assign_tasks(my_programmer_07, "Diseñar Maquetado / Frontend")
     my_project_manager_02.assign_tasks(my_programmer_08, "Diseñar / Implementar API REST")
-    print('--------------------------------------------------------------------------')
+    #print('--------------------------------------------------------------------------')
 
     # Probando el sistema de commits de los programadores asignados al proyecto 01
     # my_programmer_01.commit("Login implemented")

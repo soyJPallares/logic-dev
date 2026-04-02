@@ -199,7 +199,7 @@ while True:
 
         case 3:
             while True:
-                Programmer.menu_Programmer()
+                my_programmer_01.menu_Programmer()
                 opc4 = int(input("Digite la opcion: "))
                 match opc4:
                     case 1:
