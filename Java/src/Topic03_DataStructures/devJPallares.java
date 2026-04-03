@@ -23,8 +23,7 @@ public class devJPallares {
         System.out.println(cities);
 
         // En este ejemplo el objeto lista se crea con la keyword "new" por lo que es mutable
-        // Podemos usar "List.of" dentro del constructor de la lista para definir los elementos de la lista
-        // al tiempo de crearla
+        // Podemos usar "List.of" dentro del constructor de la lista para definir los elementos de la lista al tiempo de crearla
         List<String> countries = new ArrayList<>(List.of("Colombia", "Venezuela", "Perú", "Ecuador"));
         System.out.println(countries);
 

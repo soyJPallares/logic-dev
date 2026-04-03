@@ -6,12 +6,32 @@
  * Prueba a dividir "10/0" o acceder a un índice no existente
  * de un listado para intentar provocar un error.
  '''
+# ------------------------------------------------------------------------------------------
+'''Ejemplo metodo isintance(myObj, type) -> bool y all(dataEstructure, condition) -> bool'''
+# ------------------------------------------------------------------------------------------
+# x = isinstance("Hello", (str, float, int, str, list, dict, tuple))
+# y: list[int] = [1, 2, 3, '']
+# z = isinstance(y, list)
+
+# print(x)
+# print(z)
+
+# #print('\n')
+# r = all(isinstance(i, int) for i in y)
+# print(r)
+
+# #print('\n')
+# for i in y:
+# 	print(isinstance(i, int))
+
+x: int = 10
+y: list[int] = [1,2,3,0]
 
 try:
-    x: list[int] = [1,2,3,0]
-    print(x)
-    for i in x:
-         print(f'{10/i:.1f}')
+    
+    print(xy
+    for i in y:
+         print(f'{x/i:.1f}')
 
     # print(x[4])
       
