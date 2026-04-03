@@ -48,7 +48,9 @@ class Employee:
 #-------------------------------------
     def print_team(self) -> None:
         print(f'Team members: ')
-        for member in self.team: print(f'{member.id} - {member.name} - {member.user}')
+        print(f'| {"ID":^6} | {"Name":<20} | {"User":<15} |')
+        print(f'| {"-"*6} | {"-"*20} | {"-"*15} |')
+        for member in self.team: print(f'| {member.id:>6} | {member.name:<20} | {member.user:<15} |')
 
 
 #--------------------------------------------------------------------------
@@ -78,7 +80,7 @@ class Manager(Employee):
     def print_approvals(self) -> None:
         print(f'Expense approvals for Manager: {self.name} | Department: {self.department}')
         for amount, ticket, status in self.expenses:
-            print(f'Amount: {amount:.1f} | Has Ticket: {"Si" if ticket else "No"} | Bill - "{status}"')
+            print(f'Amount: ${amount:>13,.1f} | Ticket: {"Yes" if ticket else "No":<3} | Bill: "{status}"')
 
 #-------------------------------------
     def menuManager(self) -> None:
@@ -108,14 +110,6 @@ class ProjectManager(Employee):
         self.task: str = task
 
         self.tasks[self.programmer] = self.task
-        # print(f'Programmer: {self.programmer.name} | Task assigned: "{self.task}"')
-
-# #-------------------------------------
-#     def menuProject(self, my_manager: Manager) -> Manager:
-#         self.my_manager: Manager = my_manager
-#         self.my_manager.print_team()
-#         print("0. Return")
-#         return self.my_manager
 
 #-------------------------------------
     def menuProjectManager(self) -> None:
@@ -135,6 +129,7 @@ class Programmer(Employee):
         super().__init__(id, name, user)
         self.level: str = level
         self.language: str = language
+        self.commits: list = []
 
 #-------------------------------------
     def add_team_member(self, member:Employee) -> None:
@@ -144,12 +139,15 @@ class Programmer(Employee):
     def commit(self, message: str) -> None:
         self.message: str = message
         self.branch: str = self.user
-        print(f'Commit: "{self.message}" | Branch: {self.branch} | Programmer: {self.name}')
 
+        self.commits.append((self.branch, self.message))
+        
 #-------------------------------------
     def menu_Programmer(self) -> None:
         clrscr()
         print("1. Commit")
+        print("2. History Commits")
+        print("3. Team history Commits")
         print("0. Return")
 
 #--------------------------------------------------------------------------
@@ -175,43 +173,30 @@ def main() -> None:
     my_programmer_02: Programmer = Programmer(5, "Bob Smith", "@bsmith", "Junior", "javascript/React/")
     my_programmer_03: Programmer = Programmer(6, "Charlie Brown", "@cbrown", "Mid-level", "html/css")
     my_programmer_04: Programmer = Programmer(7, "Diana Prince", "@dprince", "Trainee", "python/FastApi")
-    my_programmer_05: Programmer = Programmer(4, "Allen Foxter", "@afoxter", "Senior", "python/FastApi")
-    my_programmer_06: Programmer = Programmer(5, "Bobie Smithson", "@bsmithson", "Junior", "javascript/React/")
-    my_programmer_07: Programmer = Programmer(6, "Charles Boswell", "@cboswell", "Mid-level", "html/css")
-    my_programmer_08: Programmer = Programmer(7, "Liv Tyler", "@ltyler", "Trainee", "python/FastApi")
-    # my_project_manager_01.print_type()
+    my_programmer_05: Programmer = Programmer(8, "Allen Foxter", "@afoxter", "Senior", "python/FastApi")
+    my_programmer_06: Programmer = Programmer(9, "Bobie Smithson", "@bsmithson", "Junior", "javascript/React/")
+    my_programmer_07: Programmer = Programmer(10, "Charles Boswell", "@cboswell", "Mid-level", "html/css")
+    my_programmer_08: Programmer = Programmer(11, "Liv Tyler", "@ltyler", "Trainee", "python/FastApi")
     # print('--------------------------------------------------------------------------')
 
     # Asignando los Gerentes de Proyecto al equipo del Gerente General
     my_manager.add_team_member(my_project_manager_01)
     my_manager.add_team_member(my_project_manager_02)
 
-    # Imprime el departamento y el gerente general
-    # my_manager.print_department()
-
-    # Imprime el equipo del gerente general (Los gerentes de proyecto que tiene asignados)
-    # my_manager.print_team()
 
     # Probando el sistema de aprobaciones del gerente general
     # Se aprueban gastos menores a 50.000 sin ticket, y se rechazan gastos mayores a 50.000 sin ticket
     # Se aprueban gastos de cualquier monto si cuentan con ticket
-    # El módulo imprime inmediatamente el resultado de cada aprobación
     my_manager.approvals(45000, False)
     my_manager.approvals(60000, False)
     my_manager.approvals(90000, True)
     # print('--------------------------------------------------------------------------')
-
-    # Imprime el nombre del proyecto y el gerente del proyecto 01
-    # my_project_manager_01.print_project()
     
     # Asignando los programadores al equipo del Proyecto / Gerente de Proyecto
     my_project_manager_01.add_team_member(my_programmer_01)
     my_project_manager_01.add_team_member(my_programmer_02)
     my_project_manager_01.add_team_member(my_programmer_03)
     my_project_manager_01.add_team_member(my_programmer_04)
-
-    # Imprime el equipo del Proyecto (Los programadores asignados al Gerente del proyecto)
-    # my_project_manager_01.print_team()
 
     # Asignando tareas a los programadores desde el Gerente del Proyecto
     my_project_manager_01.assign_tasks(my_programmer_01, "Implementar login")
@@ -220,23 +205,11 @@ def main() -> None:
     my_project_manager_01.assign_tasks(my_programmer_04, "Diseñar Base de Datos")
     #print('--------------------------------------------------------------------------')
 
-    # Prueba de Asignación de programador fallida,
-    # Los programadores no pueden tener asiggnados a otros programadores
-    # El sistema lo indicará y NO se añadirá un programador a un equipo de otro programador
-    # my_programmer_01.add_team_member(my_programmer_02)
-    # print('--------------------------------------------------------------------------')
-
-    # Imprime el nombre del proyecto y el gerente del proyecto 01
-    # my_project_manager_02.print_project()
-
     # Asignando los programadores al equipo del Proyecto / Gerente de Proyecto
     my_project_manager_02.add_team_member(my_programmer_05)
     my_project_manager_02.add_team_member(my_programmer_06)
     my_project_manager_02.add_team_member(my_programmer_07)
     my_project_manager_02.add_team_member(my_programmer_08)
-   
-    # Imprime el equipo del Proyecto (Los programadores asignados al Gerente del proyecto)
-    # my_project_manager_02.print_team()
 
     # Asignando tareas a los programadores desde el Gerente del Proyecto
     my_project_manager_02.assign_tasks(my_programmer_05, "Diseñar Base de Datos / Backend")
@@ -246,34 +219,34 @@ def main() -> None:
     #print('--------------------------------------------------------------------------')
 
     # Probando el sistema de commits de los programadores asignados al proyecto 01
-    # my_programmer_01.commit("Login implemented")
-    # my_programmer_02.commit("Registration implemented")
-    # my_programmer_03.commit("Layout designed")
-    # my_programmer_04.commit("Database designed")
+    my_programmer_01.commit("Login implemented")
+    my_programmer_02.commit("Registration implemented")
+    my_programmer_03.commit("Layout designed")
+    my_programmer_04.commit("Database designed")
     # print('--------------------------------------------------------------------------')
 
     # Probando el sistema de commits de los programadores asignados al proyecto 02
-    # my_programmer_05.commit("Database designed / Backend implemented")
-    # my_programmer_06.commit("Login implemented / Middleware implemented")
-    # my_programmer_07.commit("Layout designed / Frontend implemented")
-    # my_programmer_08.commit("API REST designed / implemented")
+    my_programmer_05.commit("Database designed / Backend implemented")
+    my_programmer_06.commit("Login implemented / Middleware implemented")
+    my_programmer_07.commit("Layout designed / Frontend implemented")
+    my_programmer_08.commit("API REST designed / implemented")
 
 
     while True:
         Menu()
-        opc = int(input("Escoge una opcion: "))
+        opc = int(input("Choose an option: "))
         match opc:
             case 1:
                 while True:
                     my_manager.menuManager()
-                    opc1 = int(input("Escoge una opcion: "))
+                    opc1 = int(input("Choose an option: "))
                     match opc1:
                         case 1:
                             clrscr()
                             print(f'Nota: \nExpense < COP50000 || Has Ticket: "n" => Auto Approved \nExpense > COP50000 || Has Ticket: "n" => Denied. \nExpense > COP50000 || Has Ticket: "s" => Approved.')   
-                            monto = float(input("Digite el monto: "))
-                            ticket_input: str = input("¿Cuenta con ticket? (s/n): ")
-                            ticket: bool = ticket_input.lower() == 's' or ticket_input.lower() == 'si'
+                            monto = float(input("Enter the amount: "))
+                            ticket_input: str = input("Do you have a ticket? (y/n): ")
+                            ticket: bool = ticket_input.lower() == 'y' or ticket_input.lower() == 'yes' or ticket_input.lower() == 's' or ticket_input.lower() == 'si'
                             my_manager.approvals(monto, ticket)
                             x: str = input("Press <Enter> to continue...")
                         case 2:
@@ -298,7 +271,7 @@ def main() -> None:
 
                 while True:
                     my_project_manager.menuProjectManager()
-                    opc2 = int(input("Escoge una opcion: "))
+                    opc2 = int(input("Choose an option: "))
                     match opc2:
                         case 1:
                             clrscr()
@@ -315,18 +288,17 @@ def main() -> None:
                                     my_programmer: Employee = my_project_manager.select_member_team(member_project_manager_team)
                                     break
 
-                            task_description: str = input("Ingrese la descripción de la tarea: ")
+                            task_description: str = input("Enter the task description: ")
                             my_project_manager.assign_tasks(my_programmer, task_description)
                             x: str = input("Press <Enter> to continue...")
 
                         case 3:
                             clrscr()
-                            # La solución es funcional pero voy a probar otra forma:
-                            # for dev_task in my_project_manager.tasks.items():
-                            #     print(f'Dev: {dev_task[0].name} | Task: "{dev_task[1]}"')
                             
+                            print(f'| {"ID":^6} | {"Dev":<20} | {"Task":<50} |')
+                            print(f'| {"-"*6} | {"-"*20} | {"-"*50} |')
                             for dev, task in my_project_manager.tasks.items():
-                                print(f'Dev: {dev.name} | Task: "{task}"')
+                                print(f'| {dev.id:>6} | {dev.name:<20} | {task:<50} |')
 
                             x: str = input("Press <Enter> to continue...")
    
@@ -335,11 +307,62 @@ def main() -> None:
 
             case 3:
                 clrscr()
-                print("Funcionalidad de desarrollo aún no implementada.")
-                x = input("Press <Enter> to continue...")
+                print(f'Developers Team: ')
+                print(f'| {"ID":^6} | {"Name":<20} | {"User":<15} |')
+                print(f'| {"-"*6} | {"-"*20} | {"-"*15} |')
+                for member_manager_team in my_manager.team:
+                    my_project_manager: Employee = my_manager.select_member_team(member_manager_team)
+                    for member_project_manager_team in my_project_manager.team:
+                        print(f'| {member_project_manager_team.id:>6} | {member_project_manager_team.name:<20} | {member_project_manager_team.user:<15} |')
+
+                programmer_id: int = int(input('From developers list below, Enter the developer id: '))
+
+                for member_manager_team in my_manager.team:
+                    my_project_manager: Employee = my_manager.select_member_team(member_manager_team)
+                    for member_project_manager_team in my_project_manager.team:                        
+                        if member_project_manager_team.id == programmer_id:
+                            my_programmer: Employee = my_project_manager.select_member_team(member_project_manager_team)
+                            break  
+
+                while True:        
+                    my_programmer.menu_Programmer()
+                    opc3 = int(input("Choose an option: "))
+                    match opc3:
+                        case 1:
+                            clrscr()
+                            commit_message: str = input("Enter the commit message: ")
+                            my_programmer.commit(commit_message)
+                            x: str = input("Press <Enter> to continue...")
+                        case 2:
+                            clrscr()
+                            print(f'{"-"*72}\nCommit history for Developer: {my_programmer.name}\n{"-"*72}')
+                            print(f'| {"Branch":<15} | {"Commit":<50} |')
+                            print(f'| {"-"*15} | {"-"*50} |')
+                            for branch, message in my_programmer.commits:
+                                print(f'| {branch:<15} | {message:<50} |')
+                            x: str = input("Press <Enter> to continue...")
+
+                        case 3:
+                            clrscr()
+                            print(f'Developers History Commits: ')
+
+                            for member_manager_team in my_manager.team:
+                                for member_project_manager_team in my_project_manager.team:
+
+                                    print(f'{"-"*72} \n| Developer: {member_project_manager_team.name:<72} |\n{"-"*72}')
+
+                                    print(f'| {"Branch":<15} | {"Commit":<50} |')
+                                    print(f'| {"-"*15} | {"-"*50} |')
+                                    for branch, message in member_project_manager_team.commits:
+                                        print(f'| {branch:<15} | {message:<50} |')
+
+                            x: str = input("Press <Enter> to continue...")
+
+                        case 0:
+                            break
             case 0:
                 clrscr()
-                print("Saliendo del programa...")
+                print("Exiting the program...")
                 x: str = input("Press <Enter> to continue...")
                 break
 
