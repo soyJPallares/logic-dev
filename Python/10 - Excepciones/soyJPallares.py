@@ -28,8 +28,8 @@ x: int = 10
 y: list[int] = [1,2,3,0]
 
 try:
-    
-    print(xy
+    print(x)
+    print(y)
     for i in y:
          print(f'{x/i:.1f}')
 
