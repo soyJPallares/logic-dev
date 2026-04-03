@@ -19,7 +19,8 @@
 x = 10
 def prueba_de_errores(a : str) -> str:
     if not isinstance(a, str):
-        raise TypeError(TypeError)
+        print(type(x))
+        raise TypeError("ytujrj6hyuetuy")
     
 try:
     prueba_de_errores(x)
