@@ -27,21 +27,23 @@ def excepciones(x: int, y: list[int]) -> str:
     elif not isinstance(y, list) or not all(isinstance(i, int) for i in y):
         raise TypeError(f"The second Parameter: y=(\"{y}\"), must be contain a list of integers")
     else:
-        print(f'Divividendo: {x}')
-        print(f'Divisores: {y}\n{"-"*10}')
         for i in y:
             print(f'{x} / {i} = {x/i:.1f}')
-    
+
+print(f'{"-"*30}\nDivividendo: {x}')
+print(f'Divisores: {y}\n{"-"*30}')
+
 try:
     excepciones(x, y)
+    print(f'{"-"*30}')
 
 except NameError as e:
-    print(f'Error type: "{e}" [The variable "{e.name}" is not defined]')
+    print(f'Error type: "{e}" [The variable "{e.name}" is not defined]\n{"-"*100}')
 except ZeroDivisionError as e:
-    print(f'Error type: "{e}" [You can\'t divide by zero]')
+    print(f'Error type: "{e}" [You can\'t divide by zero]\n{"-"*100}')
 except TypeError as e:
-    print(f'Error type: "{e}" [The data type of the any parameter: \n(x: "{type(x)}", y: "{type(y)}" or list contained values in "{y}" isn\'t integer]')
+    print(f'Error type: "{e}" [The data type of the any parameter: \n(x: "{type(x)}", y: "{type(y)}" or list contained values in "{y}" isn\'t integer]\n{"-"*100}')
 else:
-    print('Completed without exceptions')
+    print(f'Completed without exceptions\n{"-"*30}')
 finally:
-    print('Exceptions testing finished')
+    print(f'Exceptions testing finished\n{"-"*30}')

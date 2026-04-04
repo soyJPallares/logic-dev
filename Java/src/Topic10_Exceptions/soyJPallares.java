@@ -1,19 +1,35 @@
-package Topic10_Exceptions;
 
-import java.util.ArrayList;
-import java.util.List;
+// * EJERCICIO:
+// * Explora el concepto de manejo de excepciones según tu lenguaje.
+// * Fuerza un error en tu código, captura el error, imprime dicho error
+// * y evita que el programa se detenga de manera inesperada.
+// * Prueba a dividir "10/0" o acceder a un índice no existente
+// * de un listado para intentar provocar un error.
+
+package Topic10_Exceptions;
 
 public class soyJPallares {
     public static void main(String[] args) {
+
         Integer x = 10;
-        List<Integer> y = new ArrayList<>(List.of(1, 2, 3, 4));
+        int[] y = {1, 2, 3, 0};
+
+        System.out.printf("Dividendo: %d", x);
+        System.out.printf("Divisores: ");
+        for (int j : y) {
+            System.out.printf("[%d]", j);
+        }
+        System.out.println();
 
         try {
-            System.out.println(x);
-            System.out.println(y);
-            //for
+            //System.out.println(y[4]);
+            for (int i : y) {
+                System.out.printf("%d // %d = %d\n", x, i, x/i);
+            }
         } catch (Exception e) {
-            //  Block of code to handle errors
+            System.out.printf("Se ha producido un error: \n%s", e);
+        } finally {
+            System.out.printf("\nSe completó la ejecución del programa");
         }
     }
 }
