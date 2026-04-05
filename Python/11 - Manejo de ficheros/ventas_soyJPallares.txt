@@ -18,3 +18,4 @@ Cámara Web Logitech, 40, 285000.0
 Auriculares HyperX Cloud, 28, 405000.0
 Pasta Térmica Thermal Grizzly, 100, 51000.0
 Adaptador Wi-Fi TP-Link, 15, 185000.0
+Procesador, 12, 260000.0
