@@ -51,7 +51,7 @@ def menu() -> None:
     print("4. Eliminar producto")
     print("5. Calcular venta total")
     print("6. Calcular venta por producto")
-    print("7. Salir")
+    print("0. Salir")
 
 # ----------------------------------------------------------------------------------
 def add () -> None:
@@ -79,9 +79,11 @@ def find () -> None:
             print(f"Producto encontrado: {line.strip()}")
 
 # ----------------------------------------------------------------------------------
-def actualizar () -> None:
+def update () -> None:
 # ----------------------------------------------------------------------------------
         print(f"{'-'+21}\n|  Actualizar producto  |\n{'-'+21}")
+        print(f"Nota: \nSe reemplaza solo una parte de la línea encontrada. \nSe reemplaza sólo la expresión literal exacta.")
+        print(f"(Dejar vacío para no cambiar ningún valor)\n")
         producto: str = input("Nombre del Producto: ")
 
         with open(file, "r") as f:
@@ -90,29 +92,46 @@ def actualizar () -> None:
         # Buscar y editar la línea
         for i, line in enumerate(lines):
             if producto in line:
-                print(f"Producto encontrado: {line.strip()}")
-                new_content: str = input("Nuevo contenido (dejar vacío para no cambiar): ")
+                print(f"Producto encontrado: {line.strip()}")                
+                old_content: str = input("Contenido actual: ")
+                new_content: str = input("Nuevo contenido: ")
                 # Reemplazar línea completa
-                # lines[i] = new_content.strip() + "\n"  
-                # Reemplazar solo una parte (Sólo la palabra o expresión)):
-                lines[i] = line.replace("contenido viejo", "contenido nuevo")
+                # lines[i] = new_content.strip() + "\n"
+                # Reemplazar solo una parte con el método replace (Sólo la palabra o expresión literal exacta):
+                lines[i] = line.replace(old_content, new_content)
 
-        # # Reescribir el archivo
-        # with open(file, "w") as f:
-        #     f.writelines(lines)
+        # Reescribir el archivo
+        with open(file, "w") as f:
+            f.writelines(lines)
 
 # ----------------------------------------------------------------------------------
-def eliminar () -> None:
+def delete () -> None:
+       
+# ----------------------------------------------------------------------------------
+        print(f"{'-'+21}\n|  Eliminar producto  |\n{'-'+21}")
+        producto: str = input("Nombre del Producto: ")
+
+        with open(file, "r") as f:
+            lines: list[str] = f.readlines()
+
+        # Buscar y editar la línea
+        for line in lines:
+            if producto in line:
+                print(f"Producto encontrado: {line.strip()} !!!")
+                lines.remove(line)  # Eliminar la línea encontrada
+                print(f"Producto eliminado!!!")
+
+        # Reescribir el archivo
+        with open(file, "w") as f:
+            f.writelines(lines)
+
+# ----------------------------------------------------------------------------------
+def total_sales () -> None:
 # ----------------------------------------------------------------------------------
     pass
 
 # ----------------------------------------------------------------------------------
-def ventaTotal () -> None:
-# ----------------------------------------------------------------------------------
-    pass
-
-# ----------------------------------------------------------------------------------
-def ventaPorProducto () -> None:
+def product_sales () -> None:
 # ----------------------------------------------------------------------------------
     pass
 
@@ -121,13 +140,27 @@ def main() -> None:
 # ----------------------------------------------------------------------------------
     crear_archivo()
 
-    with open(file_name) as f:
+    with open(file) as f:
         print(f.read())
 
-    # os.remove(file_name)
-    add()
+    # os.remove(file)
+while True:
+    menu()
+    opc: str = input("Opción: ")
+    print('')
+    
+    match opc:
+        case '1': add()
+        case '2': find()
+        case '3': update()
+        case '4': delete()
+        case '5': total_sales()
+        case '6': product_sales()
+        case '0': break
+        case _: print('¡¡¡ Opción errada !!!')
+    
 
-    with open(file_name) as f:
+    with open(file) as f:
         print(f.read())
 
 main()
