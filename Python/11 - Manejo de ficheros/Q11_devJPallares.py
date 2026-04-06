@@ -43,20 +43,9 @@ def crear_archivo() -> None:
             f.write("Adaptador Wi-Fi TP-Link, 15, 185000.0\n")
 
 # ----------------------------------------------------------------------------------
-def menu() -> None:
-# ----------------------------------------------------------------------------------
-    print("1. Añadir producto")
-    print("2. Consultar productos")
-    print("3. Actualizar producto")
-    print("4. Eliminar producto")
-    print("5. Calcular venta total")
-    print("6. Calcular venta por producto")
-    print("0. Salir")
-
-# ----------------------------------------------------------------------------------
 def add () -> None:
 # ----------------------------------------------------------------------------------
-    print(f"{'-'+21}\n|  Añadir producto  |\n{'-'+21}")
+    print(f"{'-'*21}\n|  Añadir producto  |\n{'-'*21}")
     nombre = input("Nombre del Producto: ")
     cantidad = input("Cantidad Vendida: ")
     precio = input("Precio Unitario: ")
@@ -67,10 +56,10 @@ def add () -> None:
 # ----------------------------------------------------------------------------------
 def find () -> None:
 # ----------------------------------------------------------------------------------
-    print(f"{'-'+21}\n|  Buscar producto  |\n{'-'+21}")
+    print(f"{'-'*21}\n|  Buscar producto  |\n{'-'*21}")
     producto: str = input("Nombre del Producto: ")
 
-    with open(file, "r") as f:
+    with open(file) as f:
         lines: list[str] = f.readlines()
 
     # Buscar la línea
@@ -81,12 +70,12 @@ def find () -> None:
 # ----------------------------------------------------------------------------------
 def update () -> None:
 # ----------------------------------------------------------------------------------
-        print(f"{'-'+21}\n|  Actualizar producto  |\n{'-'+21}")
+        print(f"{'-'*25}\n|  Actualizar producto  |\n{'-'*25}")
         print(f"Nota: \nSe reemplaza solo una parte de la línea encontrada. \nSe reemplaza sólo la expresión literal exacta.")
         print(f"(Dejar vacío para no cambiar ningún valor)\n")
         producto: str = input("Nombre del Producto: ")
 
-        with open(file, "r") as f:
+        with open(file) as f:
             lines: list[str] = f.readlines()
 
         # Buscar y editar la línea
@@ -106,12 +95,11 @@ def update () -> None:
 
 # ----------------------------------------------------------------------------------
 def delete () -> None:
-       
 # ----------------------------------------------------------------------------------
-        print(f"{'-'+21}\n|  Eliminar producto  |\n{'-'+21}")
+        print(f"{'-'*21}\n|  Eliminar producto  |\n{'-'*21}")
         producto: str = input("Nombre del Producto: ")
 
-        with open(file, "r") as f:
+        with open(file) as f:
             lines: list[str] = f.readlines()
 
         # Buscar y editar la línea
@@ -125,24 +113,43 @@ def delete () -> None:
         with open(file, "w") as f:
             f.writelines(lines)
 
+
 # ----------------------------------------------------------------------------------
 def total_sales () -> None:
 # ----------------------------------------------------------------------------------
     pass
+
 
 # ----------------------------------------------------------------------------------
 def product_sales () -> None:
 # ----------------------------------------------------------------------------------
     pass
 
+
+# ----------------------------------------------------------------------------------
+def listing () -> None:
+# ----------------------------------------------------------------------------------
+    with open(file) as f:
+        print(f.read())
+
+
+# ----------------------------------------------------------------------------------
+def menu() -> None:
+# ----------------------------------------------------------------------------------
+    print("1. Añadir producto")
+    print("2. Consultar productos")
+    print("3. Actualizar producto")
+    print("4. Eliminar producto")
+    print("5. Listar productos")
+    print("6. Calcular venta total")
+    print("7. Calcular venta por producto")
+    print("0. Salir")
+
+
 # ----------------------------------------------------------------------------------
 def main() -> None:
 # ----------------------------------------------------------------------------------
     crear_archivo()
-
-    with open(file) as f:
-        print(f.read())
-
     # os.remove(file)
 while True:
     menu()
@@ -154,13 +161,10 @@ while True:
         case '2': find()
         case '3': update()
         case '4': delete()
-        case '5': total_sales()
-        case '6': product_sales()
+        case '5': listing()
+        case '6': total_sales()
+        case '7': product_sales()
         case '0': break
         case _: print('¡¡¡ Opción errada !!!')
-    
-
-    with open(file) as f:
-        print(f.read())
 
 main()

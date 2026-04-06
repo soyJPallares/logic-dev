@@ -9,7 +9,7 @@ Fuente de Poder EVGA, 22, 550000.0
 Gabinete NZXT, 14, 740000.0
 Refrigeración Líquida Corsair, 18, 775000.0
 Monitor LG UltraGear, 25, 1230000.0
-Teclado Mecánico Logitech, 20, 940000.0
+Teclado Mecánico Logitech, 16, 940000.0
 Mouse Razer DeathAdder, 35, 610000.0
 Disco Duro Seagate, 12, 820000.0
 Tarjeta de Sonido Creative, 5, 1430000.0
@@ -18,3 +18,4 @@ Cámara Web Logitech, 40, 285000.0
 Auriculares HyperX Cloud, 28, 405000.0
 Pasta Térmica Thermal Grizzly, 100, 51000.0
 Adaptador Wi-Fi TP-Link, 15, 185000.0
+CPU Gaming Liquid Cold, 42, 860000.0
