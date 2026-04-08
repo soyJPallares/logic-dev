@@ -12,7 +12,16 @@
  * - La opción salir borra el .txt.
 '''
 
+# ++------------------------------------------------------------++
+# ||     función clrscr (Clear Screen): Limpia la pantalla.     ||
+# ++------------------------------------------------------------++
+
 import os
+import platform
+
+def clrscr() -> None:
+    if platform.system() == "Windows": os.system("cls")
+    else: os.system("clear")
 
 file = "ventas_soyJPallares.txt"
 # ----------------------------------------------------------------------------------
@@ -45,6 +54,7 @@ def crear_archivo() -> None:
 # ----------------------------------------------------------------------------------
 def add () -> None:
 # ----------------------------------------------------------------------------------
+    clrscr()
     print(f"{'-'*21}\n|  Añadir producto  |\n{'-'*21}")
     nombre = input("Nombre del Producto: ")
     cantidad = input("Cantidad Vendida: ")
@@ -53,9 +63,12 @@ def add () -> None:
     with open(file, "a") as f:
         f.write(f"{nombre}, {cantidad}, {precio}.0\n")
 
+    x: str = input("\nPresiona Enter para continuar...")
+
 # ----------------------------------------------------------------------------------
 def find () -> None:
 # ----------------------------------------------------------------------------------
+    clrscr()
     print(f"{'-'*21}\n|  Buscar producto  |\n{'-'*21}")
     producto: str = input("Nombre del Producto: ")
 
@@ -67,9 +80,12 @@ def find () -> None:
         if producto in line:
             print(f"Producto encontrado: {line.strip()}")
 
+    x: str = input("\nPresiona Enter para continuar...")
+
 # ----------------------------------------------------------------------------------
 def update () -> None:
 # ----------------------------------------------------------------------------------
+        clrscr()
         print(f"{'-'*25}\n|  Actualizar producto  |\n{'-'*25}")
         print(f"Nota: \nSe reemplaza solo una parte de la línea encontrada. \nSe reemplaza sólo la expresión literal exacta.")
         print(f"(Dejar vacío para no cambiar ningún valor)\n")
@@ -93,9 +109,12 @@ def update () -> None:
         with open(file, "w") as f:
             f.writelines(lines)
 
+        x: str = input("\nPresiona Enter para continuar...")
+
 # ----------------------------------------------------------------------------------
 def delete () -> None:
 # ----------------------------------------------------------------------------------
+        clrscr()
         print(f"{'-'*21}\n|  Eliminar producto  |\n{'-'*21}")
         producto: str = input("Nombre del Producto: ")
 
@@ -113,18 +132,62 @@ def delete () -> None:
         with open(file, "w") as f:
             f.writelines(lines)
 
+        x: str = input("\nPresiona Enter para continuar...")
 
 # ----------------------------------------------------------------------------------
 def total_sales () -> None:
 # ----------------------------------------------------------------------------------
-    pass
+    clrscr()
+    total_ventas = 0
+    print(f"{'-'*26}\n|  Calcular venta total  |")
+    print(f"{'-'*75}\n{'Producto':<30} {'Cantidad':^10} {'Valor Unitario':>14} {'Subtotal':>13}\n{'-'*75}")
+    with open(file, "r") as f:
+        for linea in f:
+            linea: str = linea.strip()  # Quitar saltos de línea y espacios
+            if not linea:          # Saltar líneas vacías
+                continue
 
+            # Separar los valores
+            partes: list[str] = linea.split(",")
+            nombre: str = partes[0]
+            cantidad: int = int(partes[1])
+            precio: float = float(partes[2])
+
+            subtotal: float = cantidad * precio
+            total_ventas += subtotal
+
+            print(f"{nombre:<30} |{cantidad:^8}| ${precio:>12,.1f} | ${subtotal:>15,.1f}")
+
+    print(f"{'-'*75}\nTotal general de ventas: ${total_ventas:>48,.1f}\n{'-'*75}")
+
+    x: str = input("\nPresiona Enter para continuar...")
 
 # ----------------------------------------------------------------------------------
 def product_sales () -> None:
 # ----------------------------------------------------------------------------------
-    pass
+    clrscr()
+    print(f"{'-'*26}\n|  Calcular venta por producto  |")
+    print(f"{'-'*75}\n{'Producto':<30} {'Cantidad':^10} {'Valor Unitario':>14} {'Subtotal':>13}\n{'-'*75}")
+    with open(file, "r") as f:
+        for linea in f:
+            linea: str = linea.strip()  # Quitar saltos de línea y espacios
+            if not linea:          # Saltar líneas vacías
+                continue
 
+            # Separar los valores
+            partes: list[str] = linea.split(",")
+            nombre: str = partes[0]
+            cantidad: int = int(partes[1])
+            precio: float = float(partes[2])
+
+            subtotal: float = cantidad * precio
+            # total_ventas += subtotal
+
+            print(f"{nombre:<30} |{cantidad:^8}| ${precio:>12,.1f} | ${subtotal:>15,.1f}")
+
+    print(f"{'-'*75}\n")
+
+    x: str = input("\nPresiona Enter para continuar...")
 
 # ----------------------------------------------------------------------------------
 def listing () -> None:
@@ -132,10 +195,13 @@ def listing () -> None:
     with open(file) as f:
         print(f.read())
 
+    x: str = input("\nPresiona Enter para continuar...")
+
 
 # ----------------------------------------------------------------------------------
 def menu() -> None:
 # ----------------------------------------------------------------------------------
+    clrscr()
     print("1. Añadir producto")
     print("2. Consultar productos")
     print("3. Actualizar producto")
