@@ -19,3 +19,4 @@ Auriculares HyperX Cloud, 28, 405000.0
 Pasta Térmica Thermal Grizzly, 100, 51000.0
 Adaptador Wi-Fi TP-Link, 15, 185000.0
 CPU Gaming Liquid Cold, 42, 860000.0
+Teclado de membrana, 76, 23000.0
