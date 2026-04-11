@@ -180,7 +180,7 @@ def total_sales () -> None:
 def product_sales () -> None:
 # ----------------------------------------------------------------------------------
     clrscr()
-    print(f"{'-'*32}\n|  Calcular venta por producto  |")
+    print(f"{'-'*32}\n|  Ventas por producto  |")
     print(f"{'-'*75}\n{'Producto':<30} {'Cantidad':^10} {'Valor Unitario':>14} {'Subtotal':>13}\n{'-'*75}")
     with open(file, "r") as f:
         for linea in f:
@@ -207,7 +207,7 @@ def product_sales () -> None:
 def listing () -> None:
 # ----------------------------------------------------------------------------------
     clrscr()
-    print(f"{'-'*56}\n|  {'Listar productos':^50}  |")
+    print(f"{'-'*56}\n|  {'Listado de productos':^50}  |")
     print(f"{'-'*56}\n{'Producto':<30} {'Cantidad':^10} {'Valor Unitario':>14}\n{'-'*56}")
     with open(file) as f:
         for linea in f:
@@ -237,9 +237,9 @@ def menu() -> None:
     print("2. Consultar productos")
     print("3. Actualizar producto")
     print("4. Eliminar producto")
-    print("5. Listar productos")
-    print("6. Calcular venta total")
-    print("7. Calcular venta por producto")
+    print("5. Listado de productos")
+    print("6. Ventas por producto")
+    print("7. Venta total")
     print("0. Salir")
 
 
@@ -259,8 +259,8 @@ while True:
         case '3': update()
         case '4': delete()
         case '5': listing()
-        case '6': total_sales()
-        case '7': product_sales()
+        case '6': product_sales()
+        case '7': total_sales()
         case '0': break
         case _: print('¡¡¡ Opción errada !!!')
 
