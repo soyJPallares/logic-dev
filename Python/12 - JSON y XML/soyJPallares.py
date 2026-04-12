@@ -41,6 +41,11 @@ with open(xml_file) as xml_data:
 dom = md.parseString(xml_string)
 print(dom.toprettyxml(indent="  "))
 
+
+# Otra forma de leer el XML sin usar minidom:
+# Imprime sólo los datos sin formato, sin indentación ni etiquetas
+
+# with open(xml_file) as xml_data:
     # tree = xml.parse(xml_data)
     # root = tree.getroot()
 
