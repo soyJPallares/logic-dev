@@ -1,4 +1,5 @@
 import xml.etree.ElementTree as xml
+import xml.dom.minidom as md
 import json
 import os
 
@@ -10,8 +11,9 @@ data: dict = {
     "dev_languages": ["Python", "Java"]
 }
 
-xml_file = 'devJPallares.xml'
+
 json_file = 'devJPallares.json'
+xml_file = 'devJPallares.xml'
 
 # XML
 
@@ -30,10 +32,15 @@ def save_xml():
     tree = xml.ElementTree(root)
     tree.write(xml_file)
 
+
 save_xml()
 
 with open(xml_file) as xml_data:
-    print(xml_data.read())
+    xml_string = xml_data.read()
+
+dom = md.parseString(xml_string)
+print(dom.toprettyxml(indent="  "))
+
     # tree = xml.parse(xml_data)
     # root = tree.getroot()
 
@@ -51,6 +58,5 @@ with open(json_file, 'w') as json_data:
     json.dump(data, json_data)
 
 with open(json_file) as json_data:
-    print(json_data.read())
+    print(json.dumps(json.load(json_data), indent=2))
 
-    
