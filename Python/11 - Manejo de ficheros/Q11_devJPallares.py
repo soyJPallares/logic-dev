@@ -207,8 +207,8 @@ def product_sales () -> None:
 def listing () -> None:
 # ----------------------------------------------------------------------------------
     clrscr()
-    print(f"{'-'*56}\n|  {'Listado de productos':^50}  |")
-    print(f"{'-'*56}\n{'Producto':<30} {'Cantidad':^10} {'Valor Unitario':>14}\n{'-'*56}")
+    print(f"{'-'*48}\n|  {'Listado de productos':^42}  |")
+    print(f"{'-'*48}\n{'Producto':<30} {'Valor Unitario':>14}\n{'-'*48}")
     with open(file) as f:
         for linea in f:
 
@@ -222,7 +222,7 @@ def listing () -> None:
             cantidad: int = int(partes[1])
             precio: float = float(partes[2])
 
-            print(f"{nombre:<30} |{cantidad:^8}| ${precio:>12,.1f}")
+            print(f"{nombre:<30} ${precio:>12,.1f}")
     
     print(f"{'-'*56}\n")
     
@@ -234,7 +234,7 @@ def menu() -> None:
 # ----------------------------------------------------------------------------------
     clrscr()
     print("1. Añadir producto")
-    print("2. Consultar productos")
+    print("2. Consultar producto")
     print("3. Actualizar producto")
     print("4. Eliminar producto")
     print("5. Listado de productos")
@@ -262,6 +262,7 @@ while True:
         case '6': product_sales()
         case '7': total_sales()
         case '0': break
-        case _: print('¡¡¡ Opción errada !!!')
+        case _: x: str = input("¡¡¡ Opción errada !!!\n\nPresiona Enter para continuar...")
+            # print('¡¡¡ Opción errada !!!')
 
 main()
