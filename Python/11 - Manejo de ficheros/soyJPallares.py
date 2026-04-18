@@ -20,7 +20,7 @@ with open(file_name, "w") as file:
     file.write("48\n")
     file.write("Python")
 
-with open(file_name, "r") as file:
+with open(file_name, "r") as file: # with open(file_name) as file:
     print(file.read())
 
 # os.remove(file_name)
