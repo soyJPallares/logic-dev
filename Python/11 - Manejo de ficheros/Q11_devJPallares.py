@@ -56,9 +56,9 @@ def add () -> None:
 # ----------------------------------------------------------------------------------
     clrscr()
     print(f"{'-'*21}\n|  Añadir producto  |\n{'-'*21}")
-    nombre = input("Nombre del Producto: ")
-    cantidad = input("Cantidad Vendida: ")
-    precio = input("Precio Unitario: ")
+    nombre: str = input("Nombre del Producto: ")
+    cantidad: str = input("Cantidad Vendida: ")
+    precio: str = input("Precio Unitario: ")
 
     with open(file, "a") as f:
         f.write(f"{nombre}, {cantidad}, {precio}.0\n")
