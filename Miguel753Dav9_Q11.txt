@@ -1,0 +1,3 @@
+Mantequilla,400,8000
+Cafe,600,300
+Queso,900,10000
