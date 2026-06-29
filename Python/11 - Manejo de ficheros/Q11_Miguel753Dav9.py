@@ -57,13 +57,13 @@ while True:
                 file.write(quantity_sold + ",")
                 file.write(price + "\n")
         case 2:
-            consulta = input("Producto a consultar: ")
+            consulta = input("Escoja el producto a consultar: ")
             with open(file_name) as f:
                 for x in f:
                     if consulta in x:
                         print(x)
         case 3:
-            consulta2 = input("Producto a actualizar: ")
+            consulta2 = input("Escoja el producto a actualizar: ")
             new_quantity_sold = input("Digite la nueva cantidad vendida: ")
             new_price = input("Digite el nuevo precio: ")
             with open(file_name, "r+") as f:
@@ -101,7 +101,18 @@ while True:
                     total += subtotal
             print(f"Ventas totales: {total}")
         case 6:
-            print()
+            consulta4 = input("Escoja el producto a calcular cuanto vendio: ")
+            with open(file_name) as f:
+                for x in f:
+                    if consulta4 in x:
+                        partes = x.strip().split(",")
+                        if len(partes) == 3:
+                            product = partes[0]
+                            quantity = int(partes[1])
+                            price = int(partes[2])
+
+                        subtotal = quantity * price
+            print(f"El total que vendio el producto es: {subtotal}")
         case 0:
             #os.remove(file_name)
             break
